@@ -1,8 +1,12 @@
 <script>
   let { children } = $props();
   import "../app.css";
-  import Header from "../Header.svelte"
+  import Header from "$lib/Header.svelte";
+  import Footer from "$lib/Footer.svelte";
 </script>
 
-<Header />
-{@render children()}
+<main class="flex flex-col">
+    <Header />
+    {@render children()}
+    <!-- <Footer /> -->
+</main>

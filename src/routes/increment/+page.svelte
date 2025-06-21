@@ -12,9 +12,11 @@
     }
 </script>
 
-<h1>Increment title</h1>
-<Button 
-    {disabled}
-    onclick={increment} 
->increment {count}</Button>
-<Buner />
+<main class="min-h-100%">
+    <h1>Increment component</h1>
+    <Button 
+        {disabled}
+        onclick={increment} 
+    >increment {count}</Button>
+    <Buner />
+</main>
