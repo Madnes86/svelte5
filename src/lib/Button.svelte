@@ -32,7 +32,7 @@
     class:primary={varibal == "primary"}
     class:secondary={varibal == "secondary"}
     class:flex={flex == true}
-    class="p-2 rounded-[12px] text-white "
+    class="p-2 rounded-[12px] text-white bg-red-800 cursor-pointer hover:opacity-70 transition-all"
     onclick={onClick}
 >
     {@render children?.()}
