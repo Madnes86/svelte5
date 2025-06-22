@@ -2,10 +2,22 @@
 // @ts-nocheck
     // Переименованны элементы, добавленно исключение для клавиши Shift, изученно contenteditable, событие в конце? Добавленна верска
     import Alert from "$lib/Alert.svelte"
-    import Store from "$lib/Store.svelte"
+
+    function Arrays() {
+        try {
+            const item = localStorage.getItem("svelte");
+            const parsed = item ? JSON.parse(item) : null;
+            console.log(parsed?.text ?? []);
+            return parsed?.text ?? ["null"];
+        } catch (e) {
+            console.error("Ошибка парсинга:", e);
+            return ["null"];
+        }
+    }
 
     let inputValue = $state("");
-    let symbols = "p-4 aspect-square aspect-auto aspect-video md: columns-3 columns-3xs columns-3sm gap-8 hover:bg-sky-800 columns-[30vw] box-decoration-clone box-decoration-slice";
+    let symbols = Arrays();
+    // let symbols = "p-4 aspect-square aspect-auto aspect-video md: columns-3 columns-3xs columns-3sm gap-8 hover:bg-sky-800 columns-[30vw] box-decoration-clone box-decoration-slice";
     let lastSymbols = $state("");
     let nextSymbols = $state([...symbols]);
     let inputSymbol = $state(nextSymbols[0]);
@@ -37,8 +49,8 @@
 
 </script>
 
-<main class="flex justify-center m-4 p-2 text-xl bg-gray-400 rounded-md">
-    <div class="flex justify-end w-200 text-sky-300">
+<main class="flex justify-center m-4 p-2 text-xl bg-white/15 backdrop-blur-md rounded-md border-1 border-white/40">
+    <div class="flex justify-end w-[40vw] text-sky-600">
         {#each lastSymbols as symbol}
             <p class="whitespace-pre">{symbol}</p>
         {/each}
@@ -50,7 +62,7 @@
         class="w-1"
         type="text"
     >
-    <div class="flex w-200 text-white">
+    <div class="flex w-[40vw] text-white">
         {#each nextSymbols as symbol}
             <p class="whitespace-pre">{symbol}</p>
         {/each}
@@ -60,5 +72,3 @@
 {#if showAlert}
     <Alert bind:show={showAlert} title="Ошибка ввода:" text={error} step={4} />
 {/if}
-
-<Store></Store>

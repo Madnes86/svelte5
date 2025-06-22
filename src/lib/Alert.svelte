@@ -47,11 +47,10 @@
 
 </script>
 
-<main class="absolute w-full h-full bg-rose-800/40">
-    <div class="m-auto mt-20 flex flex-col rounded-2xl bg-white" style="width: {WIDTH}vw;">
-        <h2  class="p-4">{title}</h2>
-        <p   class="p-4">{text}</p>
-        <div class="h-4 bg-red-400 transition-all" style="width: {progress}vw;"></div>
-        <Button  varibal="primary" onclick={close}>Закрыть</Button>
+<main class="fixed w-full h-full bg-rose-800/30 z-10">
+    <div class="m-auto mt-20 flex flex-col rounded-2xl bg-white/15 border-1 border-white/40 text-white" style="width: {WIDTH}vw;">
+        <h2  class="p-4 text-[24px] font-bold">{title}</h2>
+        <p   class="px-4">{text}</p>
+        <div class="h-4 my-4 bg-red-600 transition-all" style="width: {progress}vw;"></div>
     </div>
 </main>
