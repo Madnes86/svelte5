@@ -1,7 +1,6 @@
 <script>
-    import InputText from "$lib/InputText.svelte";
-    import Store     from "$lib/Store.svelte";
+    // import InputText from "$lib/InputText.svelte";
+    import Store     from "$lib/components/TextCards.svelte";
 </script>
 
-<InputText />
-<Store show={true} maxItem={6} />
+<Store showEdit={true} maxItem={6} />

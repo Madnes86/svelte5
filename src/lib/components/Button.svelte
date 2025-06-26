@@ -38,6 +38,12 @@
     {@render children?.()}
 </button>
 
+<!-- Variabal xnj xnj  -->
+
+<!-- @component
+- Кнопка
+-->
+
 <style>
     .color {
         background: #4e4e4e;

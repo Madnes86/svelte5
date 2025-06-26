@@ -1,5 +1,5 @@
 <script lang="ts">
-    // import Auth from "$lib/Auth.svelte"
+    import Auth from "$lib/components/Auth.svelte"
 </script>
 
-<h1>Auth</h1>
+<Auth />

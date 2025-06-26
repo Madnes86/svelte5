@@ -1,4 +1,8 @@
-# sv
+# Описание
+
+Приложение для тренировки скорости слепой печати. Позволяет создавать карточки со своим текстом, ведет учет статистики.
+
+## sv
 
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
