@@ -1,6 +1,7 @@
-<script>
+<script lang="ts">
     import InputText from "$lib/components/InputText.svelte";
     import Store     from "$lib/components/TextCards.svelte";
+
 </script>
 
 <InputText />

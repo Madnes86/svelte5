@@ -28,7 +28,8 @@
         onclick={() => {linkSelecting(href)}} 
         href="{href}">
             <img 
-            src="{name}" 
+            src="{name}"
+            alt="" 
             class="w-8 h-8 cursor-pointer hover:opacity-70">
         </a>
     {/each}

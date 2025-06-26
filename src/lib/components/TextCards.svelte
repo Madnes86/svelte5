@@ -57,7 +57,7 @@
         nameArray = "";
         textArray = "";
         setArrays();
-    }
+    };
 
     function setArrays() {
         arrays = [];
@@ -73,28 +73,28 @@
                 alert("error");
             }
         }
-    }
+    };
 
     function autoResize(event: Event) {
         const target = event.target as HTMLTextAreaElement;
         target.style.height = 'auto';
         target.style.height = `${target.scrollHeight}px`;
-    }
+    };
 
     function delArray(name: string) {
         localStorage.removeItem(name);
         setArrays();
-    }
+    };
 
     function setInputText(name: string) {
         $inputTextStore = name;
-    }
+    };
 
     function handleKeydown(event: KeyboardEvent) {
         if (event.key == "Enter") {
             addArray();
         }
-    }
+    };
 
     function mixArray(name: string, text: string) {
         const words = text.trim().split(/\s+/);
@@ -105,9 +105,7 @@
         nameArray = name + "-mix"
         textArray = words.join(" ");
         addArray()
-    }
-
-    // $inspect(mixArray)
+    };
 
     onMount(() => {
         setArrays(); // Отрисовываем по умолчанию

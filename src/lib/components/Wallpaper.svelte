@@ -12,7 +12,7 @@
         });
     });
 
-    function imageInstall(image) {
+    function imageInstall(image: string) {
         imageSelect = image;
     }
 </script>
@@ -25,10 +25,12 @@
 
 <div class="flex flex-col gap-2 fixed left-2 bottom-2 w-32">
     {#each sortImages as image }
-        <img 
-        onclick={() => imageInstall(image)} 
-        src={image} 
-        class="rounded-[12px] cursor-pointer hover:opacity-50 w-32 border-1 border-white/40"
-        >
+        <button onclick={() => imageInstall(image)}>
+            <img 
+                src={image} 
+                class="rounded-[12px] cursor-pointer hover:opacity-50 w-32 border-1 border-white/40"
+                alt=""
+            >
+        </button>
     {/each}
 </div>

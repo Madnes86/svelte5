@@ -17,7 +17,7 @@
         name     : string
         accuracy : string
         speed    : string
-        text?    : string
+        text     : string
         setInputText? : (name: string) => void;
         delArray?     : (name: string) => void;
         mixArray?     : (name: string, text: string) => void;

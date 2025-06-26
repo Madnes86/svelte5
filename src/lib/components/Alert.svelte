@@ -1,7 +1,8 @@
-<script>
+<script lang="ts">
     import { onMount } from 'svelte';
     import { fade }    from 'svelte/transition';
 
+    // Props
     let { 
         text,
         show  = $bindable(false), 
@@ -27,7 +28,7 @@
     };
 
     // Быстрое закрытие Alert
-    function quickClose(e) {
+    function quickClose(e: KeyboardEvent) {
         if (e.key === "Enter") {
             show = false;
         }

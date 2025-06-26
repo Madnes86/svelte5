@@ -1,40 +1,41 @@
 <script lang="ts">
     import Button from "$lib/components/Button.svelte"
     import { turnstile } from '@svelte-put/cloudflare-turnstile';
+    import { error } from "@sveltejs/kit";
 
+    // Var
     let login    = $state("");
     let password = $state("");
 
-    $inspect(login, password)
-
+    // Methods
     function authorization() {
-        if (login.length > 8) {
-            alert("login не должен быть длинее 8 символов");
-            return;
+        const errors: string[] = [];
+
+        switch (true) {
+            case !login: 
+                errors.push("login не казан")
+            case !password: 
+                errors.push("password не указан")
+            case 9 > login.length: 
+                errors.push("login не должен быть меньше 8 символов")
+            case 9 > password.length: 
+                errors.push("password не должен быть меньше 8 символов") 
         }
-        if (password.length > 8) {
-            alert("password не должен быть длинее 8 символов");
-            return;
-        }
-        if (login.length == 0) {
-            alert("login не указан");
-            return;
-        }
-        if (password.length == 0) {
-            alert("password не указан")
-            return;
-        }
-        getServer();
+
+        errors.length == 0 ? getServer() : alert(errors.join("\n"));
     };
+
     function getServer() {
         alert("Отправлен запрос на сервеа")
     }
 
 </script>
 
-<!-- <Tag color="#ffffff" />  Что такое JSX? -->
+<!-- @component
+- Панелька авторизации
+ -->
 
-<div class="w-[30vw] m-auto flex flex-col gap-4"
+<div class="mt-32 w-[30vw] m-auto flex flex-col gap-4"
     use:turnstile
     turnstile-sitekey="1x00000000000000000000AA"
     turnstile-theme="light"
